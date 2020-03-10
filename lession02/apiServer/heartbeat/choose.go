@@ -10,6 +10,5 @@ func ChooseRandomDataServer() string {
 	if n == 0 {
 		return ""
 	}
-
 	return ds[rand.Intn(n)]
 }

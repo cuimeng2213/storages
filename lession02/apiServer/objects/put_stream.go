@@ -2,14 +2,14 @@ package objects
 
 import (
 	"fmt"
-	"lib/objectStream"
+	"lib/objectstream"
 	"storages/lession02/apiServer/heartbeat"
 )
 
-func putStream(object string) (*objectStream.PutStream, error) {
+func putStream(object string) (*objectstream.PutStream, error) {
 	server := heartbeat.ChooseRandomDataServer()
 	if server == "" {
 		return nil, fmt.Errorf("can not found any server")
 	}
-	return objectStream.NewPutStream(server, object), nil
+	return objectstream.NewPutStream(server, object), nil
 }

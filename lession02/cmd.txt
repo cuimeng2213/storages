@@ -1,0 +1,5 @@
+export RABBITMQ_SERVER=amqp://test:test@127.0.0.1:5672
+
+LISTEN_ADDRESS=172.16.6.195:8000 STORAGE_ROOT=/tmp/1 go run dataServer.go&
+LISTEN_ADDRESS=172.16.6.196:8000 STORAGE_ROOT=/tmp/2 go run dataServer.go&
+LISTEN_ADDRESS=172.16.6.198:8000 STORAGE_ROOT=/tmp/3 go run dataServer.go&

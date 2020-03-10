@@ -14,6 +14,6 @@ func getStream(object string) (io.Reader, error) {
 		return nil, fmt.Errorf("locate %s fail", object)
 	}
 
-	return objectstream.NewGetStram(server, object)
+	return objectstream.NewGetStream(server, object)
 
 }

@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func get() {
+func get(w http.ResponseWriter, r *http.Request) {
 	object := strings.Split(r.URL.EscapedPath(), "/")[2]
 	readStream, err := getStream(object)
 	if err != nil {
@@ -16,5 +16,5 @@ func get() {
 		return
 	}
 
-	w.Write(w, readStream)
+	io.Copy(w, readStream)
 }
