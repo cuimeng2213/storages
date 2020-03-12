@@ -1,6 +1,7 @@
 package heartbeat
 
 import (
+	//     "fmt"
 	"lib/rabbitmq"
 	"os"
 	"strconv"
@@ -28,6 +29,7 @@ func ListenHeartbeat() {
 			panic(e)
 		}
 		mutex.Lock()
+		//         fmt.Printf("find a server %s \n", dataServer)
 		dataServers[dataServer] = time.Now()
 		mutex.Unlock()
 	}
@@ -54,5 +56,6 @@ func GetDataServers() []string {
 	for s, _ := range dataServers {
 		ds = append(ds, s)
 	}
+	//     fmt.Printf("GetDataServers %v \n", ds)
 	return ds
 }

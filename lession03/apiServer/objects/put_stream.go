@@ -3,11 +3,12 @@ package objects
 import (
 	"fmt"
 	"lib/objectstream"
-	"storages/lession02/apiServer/heartbeat"
+	"storages/lession03/apiServer/heartbeat"
 )
 
 func putStream(object string) (*objectstream.PutStream, error) {
 	server := heartbeat.ChooseRandomDataServer()
+	fmt.Printf("%s find server=[%s] \n", "putStream", server)
 	if server == "" {
 		return nil, fmt.Errorf("can not found any server")
 	}
